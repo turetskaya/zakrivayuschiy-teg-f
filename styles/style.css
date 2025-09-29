@@ -17,31 +17,37 @@
   background-image: var(--background-image);
   background-attachment: fixed;
   background-size: cover;
-  padding: 100px 0;
+  padding: var(--padding-medium, 100px) 0;
+}
+
+.page:has(.dialog[open]) {
+  overflow: hidden;
 }
 
 .header {
   background-color: var(--background-color, #fff);
-  padding: 100px 0;
+  padding: var(--padding-medium, 100px) 0;
   border: var(--border, solid 2px #000);
   text-align: center;
-  margin-block-end: 100px;
+  margin-block-end: var(--padding-medium, 100px);
   height: 327px;
+  display: flex;
 }
 
 .page__block {
   inline-size: var(--inline-block-size, 375px);
+  justify-content: center;
+  flex-direction: column;
 }
 
 .header__logo {
   font-family: var(--font-accent), sans-serif;
   text-decoration: none;
   text-transform: uppercase;
-  line-height: 100%;
+  line-height: 1;
   font-size: var(--font-size-header-logo, 49px);
   display: inline-block;
   margin-block-end: 20px;
-  
 }
 
 .header__title {
@@ -62,7 +68,7 @@
   font-family: var(--font-base), sans-serif;
   font-size: var(--font-size-m);
   font-variation-settings: "wght" var(--font-weight-bold);
-  padding: 6px 12px;
+  padding: 5px 10px;
 }
 
 .card__image-container {
@@ -74,7 +80,6 @@
 .card__image {
   display: block;
   inline-size: 100%;
-  block-size: 100%;
   object-fit: cover;
   object-position: center;
   aspect-ratio: 1/1;
@@ -86,8 +91,8 @@
   font-size: var(--font-size-s);
   text-transform: uppercase;
   mix-blend-mode: hard-light;
-  right: 25px;
-  top: 25px;
+  right: var(--padding-small, 25px);
+  top: var(--padding-small, 25px);
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
   color: var(--color-label);
 }
@@ -104,11 +109,11 @@
 }
 
 .card__content {
-  padding: 25px;
+  padding: var(--padding-small, 25px);
 }
 
 .card__paragraph {
-  margin-bottom: 25px;
+  margin-bottom: 23px;
   font-size: var(--font-size-m);
   line-height: 1.169;
 }
@@ -117,12 +122,12 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  
 }
 
 .card__icon-button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .like-icon {
@@ -147,7 +152,8 @@
 .button {
   border: var(--border, 2px solid #000);
   background-color: var(--background-color);
-  
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .card__like-button {
@@ -192,37 +198,30 @@
 }
 
 .save-button {
- padding: 17px 20px;
- align-items: center; 
-display: flex;
-gap: 8px;
-flex-direction: column;
-min-width: 306px;
-justify-self: center;
+  padding: 17px 20px;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  min-width: 306px;
+  justify-self: center;
 }
 
 .dialog {
   padding: 30px 40px;
   border: var(--border);
-min-inline-size: 341px;
-
+  min-inline-size: 341px;
 }
-
-
-
 
 dialog::backdrop {
   background-color: rgb(0 0 0 / 0.75);
-} 
+}
 
 .dialog__description {
   display: flex;
- align-items: center;
- gap: 20px;
- margin-block-end: 30px;
- 
-  
-  
+  align-items: center;
+  gap: 20px;
+  margin-block-end: 30px;
 }
 
 .disketa-icon {
@@ -233,24 +232,20 @@ dialog::backdrop {
 }
 
 .dialog__disketa-icon {
- aspect-ratio: 1/1;
-
-   flex-shrink: 0;
-  
-   block-size: 39px;
-   
- 
+  aspect-ratio: 1/1;
+  flex-shrink: 0;
+  block-size: 39px;
 }
 
 .dialog__text {
   font-family: var(--font-accent);
   text-transform: uppercase;
   font-size: var(--font-size-s);
- line-height: 1.5;
+  line-height: 1.5;
 }
 
 .dialog__button {
   text-transform: uppercase;
   padding: 9.5px;
-inline-size: 100%;
+  inline-size: 100%;
 }
