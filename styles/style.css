@@ -4,7 +4,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -13,4 +12,245 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-base), sans-serif;
+  font-variation-settings: "wght" var(--font-weight-base);
+  background-image: var(--background-image);
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 100px 0;
+}
+
+.header {
+  background-color: var(--background-color, #fff);
+  padding: 100px 0;
+  border: var(--border, solid 2px #000);
+  text-align: center;
+  margin-block-end: 100px;
+  height: 327px;
+}
+
+.page__block {
+  inline-size: var(--inline-block-size, 375px);
+}
+
+.header__logo {
+  font-family: var(--font-accent), sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 100%;
+  font-size: var(--font-size-header-logo, 49px);
+  display: inline-block;
+  margin-block-end: 20px;
+  
+}
+
+.header__title {
+  font-family: var(--font-accent), sans-serif;
+  font-size: var(--font-size-s);
+  line-height: 100%;
+  text-transform: uppercase;
+  font-weight: inherit;
+}
+
+.card {
+  background-color: var(--background-color);
+  margin-block-end: 50px;
+  border: var(--border, 2px solid #000);
+}
+
+.card__title {
+  font-family: var(--font-base), sans-serif;
+  font-size: var(--font-size-m);
+  font-variation-settings: "wght" var(--font-weight-bold);
+  padding: 6px 12px;
+}
+
+.card__image-container {
+  position: relative;
+  border-block-start: var(--border);
+  border-block-end: var(--border);
+}
+
+.card__image {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+}
+
+.card__label {
+  position: absolute;
+  font-family: var(--font-accent), sans-serif;
+  font-size: var(--font-size-s);
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  right: 25px;
+  top: 25px;
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  color: var(--color-label);
+}
+
+@supports (
+  (text-stroke: 1px var(--color-label-stroke)) or
+    (-webkit-text-stroke: 1px var(--color-label-stroke))
+) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--color-label-stroke);
+    text-stroke: 1px var(--color-label-stroke);
+    text-shadow: none;
+  }
+}
+
+.card__content {
+  padding: 25px;
+}
+
+.card__paragraph {
+  margin-bottom: 25px;
+  font-size: var(--font-size-m);
+  line-height: 1.169;
+}
+
+.card__like {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  
+}
+
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+}
+
+.like-icon {
+}
+
+.heart {
+}
+
+.contour {
+}
+
+.main-body {
+}
+
+.core {
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.button {
+  border: var(--border, 2px solid #000);
+  background-color: var(--background-color);
+  
+}
+
+.card__like-button {
+  background-color: transparent;
+  padding: 8.5px;
+  width: 130px;
+}
+
+.button__text {
+  font-family: var(--font-accent);
+  font-size: var(--font-size-s);
+  justify-self: center;
+  line-height: 90%;
+}
+
+.saturate-filter {
+  filter: saturate(25%);
+}
+
+.invert-filter {
+  filter: invert(70%);
+}
+
+.brightness-filter {
+  filter: brightness(200%);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(30deg);
+}
+
+.filter-sepia {
+  filter: sepia(90%);
+}
+
+.filter-blur {
+  filter: blur(7px);
+}
+
+.filter-mix {
+  filter: hue-rotate(90deg) contrast(50%);
+}
+
+.save-button {
+ padding: 17px 20px;
+ align-items: center; 
+display: flex;
+gap: 8px;
+flex-direction: column;
+min-width: 306px;
+justify-self: center;
+}
+
+.dialog {
+  padding: 30px 40px;
+  border: var(--border);
+min-inline-size: 341px;
+
+}
+
+
+
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+} 
+
+.dialog__description {
+  display: flex;
+ align-items: center;
+ gap: 20px;
+ margin-block-end: 30px;
+ 
+  
+  
+}
+
+.disketa-icon {
+  display: block;
+  margin: 0 auto;
+  block-size: 28px;
+  aspect-ratio: 1/1;
+}
+
+.dialog__disketa-icon {
+ aspect-ratio: 1/1;
+
+   flex-shrink: 0;
+  
+   block-size: 39px;
+   
+ 
+}
+
+.dialog__text {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  font-size: var(--font-size-s);
+ line-height: 1.5;
+}
+
+.dialog__button {
+  text-transform: uppercase;
+  padding: 9.5px;
+inline-size: 100%;
 }
