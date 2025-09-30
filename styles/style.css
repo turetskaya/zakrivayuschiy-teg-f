@@ -31,7 +31,7 @@
   border: var(--border, solid 2px #000);
   text-align: center;
   margin-block-end: var(--padding-medium, 100px);
-  height: 327px;
+  block-size: 327px;
   display: flex;
 }
 
@@ -331,6 +331,30 @@ dialog::backdrop {
   inline-size: 100%;
 }
 
-@media (>=1024px) {
+@media (width>=1024px) {
 
+.header {
+  margin-block-end: 98px;
+  block-size: 368px;
+}
+
+.header__title {
+   font-size: 23px;
+}
+
+.save-button {
+  padding: 17px 20px;
+  display: flex;
+  flex-direction: row;
+  min-inline-size: 335px;
+  justify-self: center;
+}
+
+.dialog {
+  max-width: 353px;
+}
+
+.disketa-icon {
+  block-size: 21px;
+}
 }
