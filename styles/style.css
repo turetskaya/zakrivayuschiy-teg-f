@@ -18,7 +18,7 @@
   background-attachment: fixed;
   background-size: cover;
   padding: var(--padding-medium, 100px) 0;
- justify-self: center;
+  justify-self: center;
 }
 
 .page:has(.dialog[open]) {
@@ -27,11 +27,10 @@
 
 .header {
   background-color: var(--background-color, #fff);
-  padding: var(--padding-medium, 100px) 0;
+  padding: 122px 16px;
   border: var(--border, solid 2px #000);
   text-align: center;
   margin-block-end: var(--padding-medium, 100px);
-  block-size: 327px;
   display: flex;
 }
 
@@ -42,7 +41,7 @@
 }
 
 .header__logo {
-  font-family: var(--font-accent), sans-serif;
+  font-family: var(--font-accent), fantasy;
   text-decoration: none;
   text-transform: uppercase;
   line-height: 1;
@@ -52,7 +51,7 @@
 }
 
 .header__title {
-  font-family: var(--font-accent), sans-serif;
+  font-family: var(--font-accent), fantasy;
   font-size: var(--font-size-s);
   line-height: 100%;
   text-transform: uppercase;
@@ -88,13 +87,14 @@
 
 .card__label {
   position: absolute;
-  font-family: var(--font-accent), sans-serif;
+  font-family: var(--font-accent), fantasy;
   font-size: var(--font-size-s);
   text-transform: uppercase;
   mix-blend-mode: hard-light;
   right: var(--padding-small, 25px);
   top: var(--padding-small, 25px);
-  text-shadow: -1px 0 var(--background-color), 0 1px var(--background-color), 1px 0 var(--background-color), 0 -1px var(--background-color);
+  text-shadow: -1px 0 var(--background-color), 0 1px var(--background-color),
+    1px 0 var(--background-color), 0 -1px var(--background-color);
   color: var(--color-label);
 }
 
@@ -131,20 +131,17 @@
   border: none;
   cursor: pointer;
   padding: 0;
+  display: flex;
 }
 
 .card__icon-button:focus-visible {
   outline: 2.3px solid #000;
-  outline-offset: -3px;
-}
-
-.like-icon {
-  transform-origin: center;
+  outline-offset: -1px;
 }
 
 .like-icon:hover .core {
-transition-delay: 0s;
-fill: var(--core-hover-color);
+  transition-delay: 0s;
+  fill: var(--core-hover-color);
 }
 
 .like-icon:hover .main-body {
@@ -153,8 +150,8 @@ fill: var(--core-hover-color);
 }
 
 .like-icon:active .core {
-transition-delay: 0s;
-fill: var(--core-active-color);
+  transition-delay: 0s;
+  fill: var(--core-active-color);
 }
 
 .like-icon:active .main-body {
@@ -179,19 +176,22 @@ fill: var(--core-active-color);
 }
 
 .like-icon.is-liked .heart {
-animation: scale-up 0.3s ease-in 0.1s;
+  animation: scale-up 0.3s ease-in 0.1s;
 }
 
 .like-icon.is-liked .sparks {
-animation: fill-in 0.3s ease-in 0.3s;
+  animation: fill-in 0.3s ease-in 0.3s;
 }
 
+.heart {
+  transform-origin: center;
+}
 .contour {
-    transition: fill 0.1s linear;
+  transition: fill 0.1s linear;
 }
 
 .main-body {
-    transition: fill 0.3s linear;
+  transition: fill 0.3s linear;
 }
 
 .core {
@@ -207,9 +207,8 @@ animation: fill-in 0.3s ease-in 0.3s;
   background-color: var(--background-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
-   position: relative;
-   overflow: hidden;
-  
+  position: relative;
+  overflow: hidden;
 }
 
 .button:focus {
@@ -218,20 +217,19 @@ animation: fill-in 0.3s ease-in 0.3s;
 }
 
 .button::before {
-     content: "";
+  content: "";
   position: absolute;
   inset: 0;
   color: var(--extra-color);
   background-color: var(--background-color);
   transition: transform 0.5s ease-in-out;
   transform: translateX(-100%);
-    mix-blend-mode: difference;
-  
+  mix-blend-mode: difference;
 }
 
 .button:hover::before {
-  transform: translateX(0); 
-  }
+  transform: translateX(0);
+}
 
 .card__like-button {
   background-color: transparent;
@@ -240,14 +238,11 @@ animation: fill-in 0.3s ease-in 0.3s;
 }
 
 .button__text {
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
   font-size: var(--font-size-s);
   justify-self: center;
   line-height: 90%;
-  position: 
   z-index: 2;
- 
-  
 }
 
 .saturate-filter {
@@ -319,7 +314,7 @@ dialog::backdrop {
 }
 
 .dialog__text {
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
   text-transform: uppercase;
   font-size: var(--font-size-s);
   line-height: 1.5;
@@ -332,29 +327,28 @@ dialog::backdrop {
 }
 
 @media (width>=1024px) {
+  .header {
+    margin-block-end: 98px;
+    padding: 130px 16px;
+  }
 
-.header {
-  margin-block-end: 98px;
-  block-size: 368px;
-}
+  .header__title {
+    font-size: 23px;
+  }
 
-.header__title {
-   font-size: 23px;
-}
+  .save-button {
+    padding: 17px 20px;
+    display: flex;
+    flex-direction: row;
+    min-inline-size: 335px;
+    justify-self: center;
+  }
 
-.save-button {
-  padding: 17px 20px;
-  display: flex;
-  flex-direction: row;
-  min-inline-size: 335px;
-  justify-self: center;
-}
+  .dialog {
+    max-width: 353px;
+  }
 
-.dialog {
-  max-width: 353px;
-}
-
-.disketa-icon {
-  block-size: 21px;
-}
+  .disketa-icon {
+    block-size: 21px;
+  }
 }

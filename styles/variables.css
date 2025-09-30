@@ -6,8 +6,11 @@
   --font-weight-base: 410;
   --font-weight-bold: 715;
 
-  --background-image: 
-    repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
+  --background-image: repeating-linear-gradient(
+      to right,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
     repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
     repeating-linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 
@@ -35,17 +38,16 @@
   --padding-medium: 100px;
 
   --button-color-shadow: #000;
---hover-color: #000;
---extra-color: #fff;
+  --hover-color: #000;
+  --extra-color: #fff;
 
---core-hover-color: #000;
---main-body-hover-color: #000;
---core-active-color: #ff0000;
---main-body-active-color: #ff0000;
+  --core-hover-color: #000;
+  --main-body-hover-color: #000;
+  --core-active-color: #ff0000;
+  --main-body-active-color: #ff0000;
 
---core-is-liked-color: #ff0000;
---main-body-is-liked-color: #ff0000;
---contour-is-liked-color: #ff0000;
---sparks-color: #ff0000;
-
+  --core-is-liked-color: #ff0000;
+  --main-body-is-liked-color: #ff0000;
+  --contour-is-liked-color: #ff0000;
+  --sparks-color: #ff0000;
 }
