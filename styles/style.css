@@ -132,6 +132,7 @@
   cursor: pointer;
   padding: 0;
   display: flex;
+  transition: outline-color 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
@@ -235,6 +236,7 @@
   background-color: transparent;
   padding: 8.5px;
   width: 130px;
+  color: var(--extra-color);
 }
 
 .button__text {
@@ -243,6 +245,7 @@
   justify-self: center;
   line-height: 90%;
   z-index: 2;
+  mix-blend-mode: difference;
 }
 
 .saturate-filter {
@@ -281,6 +284,7 @@
   flex-direction: column;
   min-width: 306px;
   justify-self: center;
+  color: var(--extra-color);
 }
 
 .dialog {
@@ -324,6 +328,7 @@ dialog::backdrop {
   text-transform: uppercase;
   padding: 9.5px;
   inline-size: 100%;
+  color: var(--extra-color);
 }
 
 @media (width>=1024px) {
