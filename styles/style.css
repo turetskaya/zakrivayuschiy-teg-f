@@ -132,7 +132,7 @@
   cursor: pointer;
   padding: 0;
   display: flex;
-  transition: outline-color 0.3s ease;
+  transition: outline 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
